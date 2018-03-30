@@ -1,0 +1,147 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+.hide {
+  display: none;
+}
+.nc-bg-color {
+  background-color: #00C0EF;
+}
+.circle {
+  border-radius: 50% !important;
+}
+.full-width {
+  width: 100%;
+}
+.black {
+  color: black !important;
+}
+.white {
+  color: white !important;
+}
+.vtv-color-text {
+  color: #c40000;
+}
+.vtv-bg-color {
+  background-color: #c40000;
+}
+/* Router links */
+.link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+.r-link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+}
+.r-link:hover {
+  opacity: 0.8;
+}
+
+.sidebar-link {
+  width: 100%;
+  height: 100%;
+}
+.sidebar-link:hover {
+  background-color: rgba(0,0,0,.12);
+}
+/* Router links END */
+
+/* Helpers */
+.relative {
+  position: relative;
+}
+.abs-top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.abs-top-left {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.text-center {
+  text-align: center;
+}
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Fleksovi */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-sp-around {
+  display: flex;
+  justify-content: space-around;
+}
+.flex-col {
+  display: flex;
+  flex-flow: column;
+}
+.flex-center-col {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-col-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.flex-wrap {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-wrap: wrap;
+}
+.flex-wrap > * {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  margin-bottom: 10px;
+}
+
+/* Epg display specifics */
+.epg-preview-item {
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #444;  
+}
+.epg-preview-item:not(:last-child) {
+  border-bottom: none;
+}
+.epg-preview-item .item-preview {
+  box-sizing: border-box;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.epg-preview-item .epg-preview-item-data {
+  width: 100%;
+}
+
+
+/* Animations */
+@keyframes glowing {
+  0% { box-shadow: 0 0 -50px #00c407; }
+  40% { box-shadow: 0 0 60px #c1c400; }
+  60% { box-shadow: 0 0 60px #c47600; }
+  100% { box-shadow: 0 0 -50px #c40000; }
+}
+
+.button-glow {
+  animation: glowing 2500ms infinite;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
