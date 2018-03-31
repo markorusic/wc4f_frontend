@@ -1,5 +1,7 @@
 import { http } from '@/services/http'
 
+const MOCK_LOAD_TIME = 1500
+
 export default {
     getContacts (cb) {
        setTimeout(() => {
@@ -19,7 +21,7 @@ export default {
                 }
             ]
         )
-       }, 1000) 
+       }, MOCK_LOAD_TIME) 
     },
     getResources (cb) {
        setTimeout(() => {
@@ -42,9 +44,15 @@ export default {
                     amount: 56,
                     unit: 'net',
                     displayValue: 'mb'
+                },
+                {
+                    id: 3,
+                    amount: 516,
+                    unit: 'net',
+                    displayValue: 'mb'
                 }
             ]
            )
-       }, 1000) 
+       }, MOCK_LOAD_TIME) 
     }
 }
