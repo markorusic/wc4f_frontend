@@ -2,16 +2,20 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import BootstrapVue from 'bootstrap-vue'
 import store from './store'
 import router from './router'
 import './filters/index.js'
 
 import 'animate.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './assets/css/main.css'
 
 import wLoader from '@/components/shared/wLoader'
-
 Vue.component('w-loader', wLoader)
+
+Vue.use(BootstrapVue)
 
 // register global functions
 // Vue.mixin({

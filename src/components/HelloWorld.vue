@@ -1,19 +1,21 @@
 <template>
   <div class="full-width">
-    <div class="info" :value="true">
+    <b-alert show dismissible variant="info">
       Msg from vuex: {{ msg }}
-    </div>
-    <div :class="serverErr ? 'error' : 'success'" :value="true">
+    </b-alert>
+    <div :class="serverErr ? 'error' : 'success'">
       <w-loader v-if="isLoading"></w-loader>
-      <div v-else class="flex-wrap">
-        <div v-for="post in posts"
-          :key="post.id"
-          class="post"
-        >
-          <h3>{{ post.title | ucFirst }}</h3>
-          <p>{{ post.body | ucFirst }}</p>
-        </div>
-      </div>      
+      <b-container v-else fluid>
+        <b-row>
+          <div v-for="post in posts"
+            :key="post.id"
+            class="col-12 col-sm-6 col-lg-4 post"
+          >
+            <h3>{{ post.title | ucFirst }}</h3>
+            <p>{{ post.body | ucFirst }}</p>
+          </div>
+        </b-row>
+      </b-container>
     </div>
   </div>
 </template>
