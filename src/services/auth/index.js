@@ -1,4 +1,4 @@
-import http from '@/services/http'
+import {http} from '@/services/http'
 
 const AUTH_TOKEN = 'auth_token'
 const AUTH_TOKEN_EXPIRATION= 'auth_token_expiration'
@@ -21,14 +21,17 @@ export default {
         }        
         return token
     },    
-    destroyToken() {
+    destroyToken () {
         localStorage.removeItem(AUTH_TOKEN)
         localStorage.removeItem(AUTH_TOKEN_EXPIRATION)
     },    
-    isAuthenticated() {
+    isAuthenticated () {
         return this.getToken() !== null
     },
-    authenticate({email, password}, cb, errorCb) {
+    isAdmin () {
+        return false
+    },
+    authenticate ({email, password}, cb, errorCb) {
         http.post('/authorization/login', {email, password})
         .then(res => {
             this.setToken(res.data.token, new Date(new Date().getTime() + TOKEN_LENGTH))

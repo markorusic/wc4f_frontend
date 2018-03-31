@@ -3,6 +3,8 @@ import Router from 'vue-router'
 // import store from '@/store'
 import UserHome from '@/components/user/pages/Home'
 import UserProfile from '@/components/user/pages/Profile'
+import LandingPage from '@/components/LandingPage'
+import authMiddleware from './middlewares/auth'
 
 Vue.use(Router)
 
@@ -11,13 +13,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home-user',
-      component: UserHome
+      name: 'home',
+      component: LandingPage
     },
     {
-      path: '/profile',
+      path: '/profil',
       name: 'user-profile',
-      component: UserProfile
+      component: UserHome,
+      beforeEnter: authMiddleware.auth
     }
   ]
 })

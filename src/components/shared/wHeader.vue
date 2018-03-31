@@ -42,7 +42,7 @@ export default {
     computed: {
         homeRouteObject () {
             return {
-                name: 'home-user'
+                name: 'home'
             }
         }
     }
