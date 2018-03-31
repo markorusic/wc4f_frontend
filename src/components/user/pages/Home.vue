@@ -1,26 +1,15 @@
 <template>
   <div class="full-width pt-5">
-    <w-loader v-if="loading" class="flex-center"></w-loader>
+    <template v-if="loading">
+      <w-loader class="flex-center"></w-loader>
+    </template>    
     <template v-else>
       <b-container class="mb-5">
         <contacts :contacts="contacts" title="Najcesci kontakti"></contacts>
         <resources :resources="resources" title="Resursi koje ste trosili"></resources>
       </b-container>
       <div class="fill-width">
-        <offers :offers="[
-          {
-            id: 1,
-            name: 'Ponuda 1'
-          },
-          {
-            id: 2,
-            name: 'Ponuda 2'
-          },
-          {
-            id: 3,
-            name: 'Ponuda 3'
-          }
-        ]" title="Sta mi nudimo?"></offers>
+        <offers :offers="offers" title="Sta mi nudimo?"></offers>
       </div>      
     </template>
   </div>
@@ -42,17 +31,19 @@ export default {
   created () {
     this.$store.dispatch('user/loadContacts')
     this.$store.dispatch('user/loadResources')
-    // this.$store.dispatch('user/loadOffers')
+    this.$store.dispatch('user/loadOffers')
   },
   computed: {
       ...mapGetters('user', {
           contacts: 'getContacts',
           resources: 'getResources',
+          offers: 'getOffers',
           contactsLoading: 'getContactsLoading',
-          resourcesLoading: 'getResourcesLoading'
+          resourcesLoading: 'getResourcesLoading',
+          offersLoading: 'getOffersLoading'
       }),
       loading () {
-        return this.contactsLoading || this.resourcesLoading        
+        return this.contactsLoading || this.resourcesLoading || this.offersLoading
       }
   }
 }

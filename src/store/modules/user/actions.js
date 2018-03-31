@@ -26,5 +26,17 @@ export const actions = {
                 commit('toggleResourcesLoading')
             }
         )
+    },
+    loadOffers ({ commit, getters }) {
+        if (!shouldLoad(getters.getOffers)) {
+            return null
+        }
+        commit('toggleOffersLoading')
+        userService.api.getOffers(
+            offers => {
+                commit('addOffers', offers)
+                commit('toggleOffersLoading')
+            }
+        )
     }
 }

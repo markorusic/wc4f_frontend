@@ -7,11 +7,17 @@ export const mutations = {
     addResources (state, resources) {
         state.resources = _.uniqBy([...state.resources, ...resources], 'id')
     },
+    addOffers (state, offers) {
+        state.offers = _.uniqBy([...state.offers, ...offers], 'id')
+    },
     toggleContactsLoading (state) {
         state.contactsLoading = !state.contactsLoading
     },
     toggleResourcesLoading (state) {
         state.resourcesLoading = !state.resourcesLoading
+    },
+    toggleOffersLoading (state) {
+        state.offersLoading = !state.offersLoading
     }
 }
   
