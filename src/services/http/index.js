@@ -1,8 +1,9 @@
 import axios from 'axios'
 
-let http = {
+const http = {
   ...axios.create({
-    baseURL: 'http://localhost:8088/'
+    // baseURL: 'https://draganamirkovic.herokuapp.com'
+    baseURL: 'http://192.168.43.220:3000/'
   }),
   setAuthHeader (token = '') {
     if (!token) {

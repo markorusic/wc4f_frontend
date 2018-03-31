@@ -27,7 +27,7 @@ export default {
     },    
     isAuthenticated() {
         return this.getToken() !== null
-    },    
+    },
     authenticate({email, password}, cb, errorCb) {
         http.post('/authorization/login', {email, password})
         .then(res => {
