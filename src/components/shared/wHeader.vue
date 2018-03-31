@@ -9,7 +9,9 @@
           <ul class="flex-list">
               <li v-for="(link, index) in links" :key="index">
                   <router-link
-                    :to="link.route"
+                    :to="{
+                        name: link.routeName
+                    }"
                   >{{ link.displayValue }}</router-link>
               </li>
           </ul>
@@ -23,15 +25,15 @@ export default {
         return {
             links: [
                 {
-                    route: 'user-profile',
+                    routeName: 'user-profile',
                     displayValue: 'Profil'
                 },
                 {
-                    route: 'user-profile',
+                    routeName: 'user-profile',
                     displayValue: 'Ponuda'
                 },
                 {
-                    route: 'user-profile',
+                    routeName: 'user-profile',
                     displayValue: 'Pomoć'
                 }
             ]

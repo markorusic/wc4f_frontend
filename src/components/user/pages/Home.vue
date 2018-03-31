@@ -11,8 +11,8 @@
 <script>
 
 import { mapGetters } from 'vuex'
-import Contacts from './Contacts'
-import Resources from './Resources'
+import Contacts from './../Contacts'
+import Resources from './../Resources'
 
 export default {
   components: {
