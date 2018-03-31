@@ -1,61 +1,68 @@
 <template>
-  <div class="full-width">
-    <b-alert show dismissible variant="info">
-      Msg from vuex: {{ msg }}
-    </b-alert>
-    <div :class="serverErr ? 'error' : 'success'">
-      <w-loader v-if="isLoading"></w-loader>
-      <b-container v-else fluid>
-        <b-alert v-if="serverErr" show variant="danger">Greska</b-alert>
-        <iframe v-else
-          width="560"
-          height="315"
-          :src="ytSrc"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen></iframe>
-      </b-container>
-    </div>
-  </div>
+  <b-container class="py-5">
+    <h2 class="text-center font-36">Najcesci kontakti</h2>
+    <b-row class="text-center py-5">
+      <b-col v-for="contact in contacts" :key="contact.id" class="flex-center">
+        <div class="contact flex-center-col">
+          <span class="font-20">{{ contact.name }}</span>
+        </div>
+      </b-col>
+    </b-row>
+    <h3 class="text-center py-5 font-36">Resursi koje ste trosili</h3>
+    <b-row>
+      <b-col v-for="resource in resources" :key="resource.id" class="text-center">
+        <div>
+          <h2 class="font-115">{{ resource.amount }}</h2>
+          <span class="uc font-48">{{ resource.displayValue }}</span>
+        </div>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
 
-import { mapGetters } from 'vuex'
-import { http } from '@/services/http'
+// import { mapGetters } from 'vuex'
+// import { http } from '@/services/http'
 
 export default {
-  name: 'HelloWorld',
   data () {
     return {
-      isLoading: false,
-      ytID: null,
-      serverErr: false
+      contacts: [
+        {
+          id: 1,
+          name: "John Doe"
+        },
+        {
+          id: 2,
+          name: "Dragana Mirkovic"
+        },
+        {
+          id: 3,
+          name: "John Doee"
+        }
+      ],
+      resources: [
+        {
+          id: 1,
+          amount: 90,
+          unit: 'minute',
+          displayValue: 'minuta'
+        },
+        {
+          id: 2,
+          amount: 200,
+          unit: 'sms',
+          displayValue: 'sms'
+        },
+        {
+          id: 3,
+          amount: 56,
+          unit: 'net',
+          displayValue: 'mb'
+        }
+      ]
     }
-  },
-  computed: {
-    ...mapGetters({
-      msg: 'msg'
-    }),
-    ytSrc () {
-      if (this.ytID) {
-        return `https://www.youtube.com/embed/${this.ytID}`
-      }
-      return ''
-    }
-  },
-  created () {
-    this.isLoading = true
-    http.get('test')
-      .then(res => {
-        this.ytID = res.data
-        this.serverErr = false
-        this.isLoading = false
-      })
-      .catch(() => {
-        this.serverErr = true
-        this.isLoading = false
-      })
   }
 }
 </script>
@@ -65,12 +72,13 @@ export default {
   padding: 20px;
   box-sizing: border-box;
 }
-.post {
+.contact {
   height: 100%;
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  background-color: #7A7A7A;
+  color: white;
   box-sizing: border-box;
+  max-width: 250px;
 }
 </style>

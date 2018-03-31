@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <w-header></w-header>
-    <transition enter-active-class="animated bounceInRight">
-      <router-view />
-    </transition>
+    <main>
+      <transition enter-active-class="animated bounceInRight">
+        <router-view />
+      </transition>
+    </main>    
     <w-footer></w-footer>
   </div>
 </template>

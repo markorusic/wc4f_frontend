@@ -1,6 +1,22 @@
+body {
+  font-family: Montserrat;
+}
 a {
   text-decoration: none;
   color: black;
+}
+a:hover {
+  color: red !important;
+  text-decoration: none;
+}
+main {
+  min-height: calc(100vh - 195px);
+}
+.uc {
+  text-transform: uppercase;
+}
+.bold {
+  font-weight: bold;
 }
 .hide {
   display: none;
@@ -107,27 +123,30 @@ a {
   max-width: 33.333333%;
   margin-bottom: 10px;
 }
-
-/* Epg display specifics */
-.epg-preview-item {
-  box-sizing: border-box;
-  padding: 10px;
-  border: 1px solid #444;  
-}
-.epg-preview-item:not(:last-child) {
-  border-bottom: none;
-}
-.epg-preview-item .item-preview {
-  box-sizing: border-box;
-  padding: 0 10px;
+.flex-list {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
-.epg-preview-item .epg-preview-item-data {
-  width: 100%;
+/* fonts sizes */
+.font-115 {
+  font-size: 115px;
 }
-
-
+.font-48 {
+  font-size: 48px;
+}
+.font-36 {
+  font-size: 36px;
+}
+.font-24 {
+  font-size: 24px;
+}
+.font-20 {
+  font-size: 20px;
+}
 /* Animations */
 @keyframes glowing {
   0% { box-shadow: 0 0 -50px #00c407; }
