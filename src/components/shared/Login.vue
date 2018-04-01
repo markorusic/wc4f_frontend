@@ -60,6 +60,7 @@ export default {
           password: this.password
         },
         token => {
+          console.log(authService.isAuthenticated())
           this.$router.push({
             name: 'user-profile'
           })

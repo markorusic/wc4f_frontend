@@ -7,7 +7,7 @@
               </router-link>
           </span>
           <ul class="flex-list">
-              <li v-for="(link, index) in links" :key="index">
+              <li v-for="(link, index) in getLinks" :key="index">
                   <router-link
                     :to="{
                         name: link.routeName
@@ -20,10 +20,12 @@
 </template>
 
 <script>
+import authService from '@/services/auth'
 export default {
     data () {
         return {
-            links: [
+            isAuthenticated: authService.isAuthenticated(),
+            authLinks: [
                 {
                     routeName: 'user-profile',
                     displayValue: 'Profil'
@@ -32,11 +34,26 @@ export default {
                     routeName: 'user-profile',
                     displayValue: 'Ponuda'
                 },
+                // {
+                //     routeName: 'user-profile',
+                //     displayValue: 'Pomoć'
+                // }
+            ],
+            guestLinks: [
                 {
-                    routeName: 'user-profile',
-                    displayValue: 'Pomoć'
+                    routeName: 'home',
+                    displayValue: '20 godina'
+                },
+                {
+                    routeName: 'home',
+                    displayValue: 'O nama'
                 }
             ]
+        }
+    },
+    watch: {
+        $route (newVal, oldVal) {
+            this.isAuthenticated = authService.isAuthenticated()
         }
     },
     computed: {
@@ -46,12 +63,15 @@ export default {
             }
         },
         getStyle () {
-            if (this.$route.name === 'user-profile') {
-                return {
-                    backgroundColor: 'transparent'
-                }
+            return {
+                // backgroundColor: 'transparent'
             }
-            return {}
+        },
+        getLinks () {
+            if (this.isAuthenticated) {
+                return this.authLinks
+            }
+            return this.guestLinks
         }
     }
 }
@@ -64,7 +84,7 @@ export default {
     width: 100%;
     box-sizing: border-box;
     height: 75px;
-    background-color: #7A7A7A;
+    background-color: transparent;
 }
 .main-header nav {
     display: flex;
