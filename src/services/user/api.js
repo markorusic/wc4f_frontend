@@ -17,9 +17,13 @@ export default {
        }, MOCK_LOAD_TIME)
     },
     getResources (cb) {
-       setTimeout(() => {
-           cb(mockData.resources)
-       }, MOCK_LOAD_TIME)
+        http.get('/api/users')
+            .then(res => {
+                cb(res.data)
+            })
+    //    setTimeout(() => {
+    //        cb(mockData.resources)
+    //    }, MOCK_LOAD_TIME)
     },
     getOffers (cb) {
         setTimeout(() => {

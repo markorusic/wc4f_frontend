@@ -33,7 +33,36 @@ export const actions = {
         commit('toggleResourcesLoading')
         userService.api.getResources(
             resources => {
-                commit('addResources', resources)
+                console.log(resources)
+                // commit('addResources', resources)
+                commit('setUser', {
+                    name: resources.name,
+                    phone: resources.phone,
+                    image: resources.image
+                })
+                commit('addResources', [
+                    {
+                        id: 1,
+                        amount: resources.package.minutes,
+                        used: resources.used_minutes,
+                        unit: 'minute',
+                        displayValue: 'minuta'            
+                    },
+                    {
+                        id: 2,
+                        amount: resources.package.messages,
+                        used: resources.used_messages,
+                        unit: 'sms',
+                        displayValue: 'sms'            
+                    },
+                    {
+                        id: 3,
+                        amount: resources.package.internet,
+                        used: resources.used_internet,
+                        unit: 'net',
+                        displayValue: 'mb'            
+                    }
+                ])
                 commit('toggleResourcesLoading')
             }
         )

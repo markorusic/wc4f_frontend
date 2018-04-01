@@ -5,7 +5,7 @@
             <b-col v-for="resource in resources" :key="resource.id" class="text-center">
                 <div>
                     <vue-circle
-                        :progress="50"
+                        :progress="getProgress(resource)"
                         :size="200"
                         :reverse="false"
                         line-cap="round"
@@ -16,7 +16,7 @@
                         insert-mode="append"
                         :thickness="15"
                         :show-percent="false">
-                        <p class="font-76">{{ resource.amount }}</p>
+                        <p class="font-76">{{ resource.used }}</p>
                     </vue-circle>
                     <p class="font-48 uc">{{ resource.displayValue }}</p>
                 </div>
@@ -44,6 +44,9 @@ export default {
       }
   },
   methods: {
+      getProgress (resource) {
+          return (resource.used / resource.amount) * 100
+      },
       getFill (unit) {
           const fill = {
               color: 'green'

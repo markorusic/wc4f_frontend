@@ -3,8 +3,8 @@
         <div class="hero-overlay-bg">
             <div class="container">
                 <div class="flex-center">
-                    <h1 class="white flex-center-col">
-                        <img :src="user.img" :alt="user.name" class="user-logo">
+                    <h1 class="white flex-center-col" v-if="user">
+                        <img :src="user.image" :alt="user.name" class="user-logo">
                         <p class="user-name">{{ user.name }}</p>
                     </h1>
                 </div>

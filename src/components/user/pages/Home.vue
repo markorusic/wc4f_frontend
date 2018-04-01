@@ -1,12 +1,12 @@
 <template>
   <div class="full-width">
-    <user-hero></user-hero>
+    <user-hero :user="user"></user-hero>
     <template v-if="loading">
       <w-loader class="flex-center"></w-loader>
     </template>    
     <template v-else>
       <b-container class="my-5">
-        <!-- <contacts :contacts="contacts" title="Najcesci kontakti"></contacts> -->
+        <!-- <graph -->
         <resources :resources="resources" title="Potrosila si do sad"></resources>
       </b-container>
       <div class="fill-width">
@@ -21,6 +21,7 @@
 import { mapGetters } from 'vuex'
 import UserHero from './../UserHero'
 import Contacts from './../Contacts'
+import Graph from './../Graph'
 import Resources from './../Resources'
 import Offers from './../Offers'
 import authServices from '@/services/auth'
@@ -30,16 +31,17 @@ export default {
       UserHero,
       Contacts,
       Resources,
-      Offers
+      Offers,
+      Graph
   },
   created () {
-    window.authServices = authServices
     this.$store.dispatch('user/loadContacts')
     this.$store.dispatch('user/loadResources')
     this.$store.dispatch('user/loadOffers')
   },
   computed: {
       ...mapGetters('user', {
+          user: 'getUser',
           contacts: 'getContacts',
           resources: 'getResources',
           offers: 'getOffers',
