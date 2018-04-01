@@ -3,6 +3,17 @@ import userService from '@/services/user'
 const shouldLoad = items => items.length === 0
 
 export const actions = {
+    loadUser ({ commit, getters }) {
+        if(getters.user !== null) {
+            return null
+        }
+        userService.api.getUserDetails(
+            { phone: getters.getUser.phone },
+            user => {
+                commit('setUser', user)
+            }
+        )
+    },
     loadContacts ({ commit, getters }) {
         if (!shouldLoad(getters.getContacts)) {
             return null

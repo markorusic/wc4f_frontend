@@ -1,9 +1,16 @@
-// import { http } from '@/services/http'
+import { http } from '@/services/http'
 import mockData from './mockData.js'
 
 const MOCK_LOAD_TIME = 0
 
 export default {
+    getUserDetails ({ phone }, cb) {
+        http.get(`/api/users?phone=${phone}`)
+            .then(res => {
+                console.log(res.data)
+                cb(res.data)
+            })
+    },
     getContacts (cb) {
        setTimeout(() => {
            cb(mockData.contacts)

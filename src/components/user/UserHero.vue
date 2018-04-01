@@ -37,6 +37,9 @@ export default {
 .hero-overlay-bg, .hero-overlay-bg .container, .hero-overlay-bg .container .flex-center {
     height: 100%;
 }
+.hero-overlay-bg {
+    background-color: rgba(0,0,0,0.2);
+}
 .hero-container {
     height: 475px;
     margin-top: -75px;
