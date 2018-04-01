@@ -6,13 +6,13 @@
     </template>    
     <template v-else>
       <b-container class="my-5">        
-        <resources :resources="resources" title="Potrošio si do sad"></resources>
+        <resources :resources="resources" title="Potrošila si do sad"></resources>
         <div class="flex-center my-5 py-5">
           <graph></graph>
-        </div>        
+        </div>
       </b-container>
       <div class="fill-width">
-        <offers id="#offers" :offers="offers" title="Dodaj sebi bonus"></offers>
+        <offers :offers="offers" title="Dodaj sebi bonus"></offers>
       </div>      
     </template>
   </div>

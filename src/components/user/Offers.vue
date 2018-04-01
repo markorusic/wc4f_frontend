@@ -13,7 +13,7 @@
                         @click.prevent="setFeatured(offer.id)"
                     >
                         <span class="font-20">{{ offer.name }}</span>
-                        <p>{{ offer.desc }}</p>
+                        <p v-html="offer.desc" ></p>
                         <b-button class="offer-btn uc" @click="buy(offer)" 
                             :class="{
                                 'success': offer.isBought

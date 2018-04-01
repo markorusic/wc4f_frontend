@@ -7,17 +7,17 @@
     <b-tabs>
         <b-tab title="Minuti" active>
             <div>
-                <img src="https://photos-2.dropbox.com/t/2/AABCgecSOlPHVMu9W6RYNfB39uTnfOm8PZIf6yZIm_3_EQ/12/272823072/png/32x32/3/1522584000/0/2/Minuti.png/EPn8hYMCGKoGIAIoAg/nisoRGOFyz-2f6ugj9XmpbG9tLzTjjkpmzJJsWiREmk?dl=0&preserve_transparency=1&size=2048x1536&size_mode=3" alt="">
+                <img src="https://photos-3.dropbox.com/t/2/AAAK3sLEcuo7E84D0tVKqiSyOnyoWRIMfBDi67BXJmh3MQ/12/272823072/png/32x32/3/1522602000/0/2/Minuti.png/EPn8hYMCGKoGIAIoAg/nisoRGOFyz-2f6ugj9XmpbG9tLzTjjkpmzJJsWiREmk?dl=0&preserve_transparency=1&size=2048x1536&size_mode=3" alt="">
             </div>
         </b-tab>
         <b-tab title="Poruke" >
             <div>
-                <img src="https://photos-3.dropbox.com/t/2/AAAYgxcOXTBsCrDNw8wXv0ImnYTWyOK__2lrQc1QdHOyBw/12/272823072/png/32x32/3/1522584000/0/2/SMS.png/EPn8hYMCGKoGIAIoAg/uyWxW5byG262yVgJVWMaD5sY54f1CWdWZzSfzIIU4mY?dl=0&preserve_transparency=1&size=2048x1536&size_mode=3" alt="">
+                <img src="https://photos-2.dropbox.com/t/2/AADMrehUtRzJBDoZuC6YtabKcEzRgyRwSgqpnC03HokwXw/12/272823072/png/32x32/3/1522602000/0/2/SMS.png/EPn8hYMCGKoGIAIoAg/uyWxW5byG262yVgJVWMaD5sY54f1CWdWZzSfzIIU4mY?dl=0&preserve_transparency=1&size=2048x1536&size_mode=3" alt="">
             </div>
         </b-tab>
         <b-tab title="Internet">
             <div>
-                <img src="https://photos-2.dropbox.com/t/2/AACN7NutYo_fSHB5Xrph6AGMorODhHyfkib5rICxOp4LMQ/12/272823072/png/32x32/3/1522584000/0/2/Mobilni%20internet.png/EPn8hYMCGKoGIAIoAg/UgDf4XrLoL8w60YfU_2RAyT73Akvw7wnQItqbldvbiA?dl=0&preserve_transparency=1&size=2048x1536&size_mode=3" alt="">
+                <img src="https://photos-3.dropbox.com/t/2/AACHbpKTcbl_M33-OBl-oH0jA-ueCgoH9VH_c13ApGenQw/12/272823072/png/32x32/3/1522602000/0/2/Mobilni%20internet.png/EPn8hYMCGKoGIAIoAg/UgDf4XrLoL8w60YfU_2RAyT73Akvw7wnQItqbldvbiA?dl=0&preserve_transparency=1&size=2048x1536&size_mode=3" alt="">
             </div>
         </b-tab>
     </b-tabs>

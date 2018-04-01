@@ -31,7 +31,7 @@ export default {
                     displayValue: 'Profil'
                 },
                 {
-                    routeName: 'user-profile',
+                    routeName: 'user-recommendation-packages',
                     displayValue: 'Ponuda'
                 },
                 // {
