@@ -1,8 +1,9 @@
 import {http} from '@/services/http'
+// import store from '@/store'
 
 const AUTH_TOKEN = 'auth_token'
 const AUTH_TOKEN_EXPIRATION= 'auth_token_expiration'
-const TOKEN_LENGTH = 60 * 60 * 24 * 1000
+const TOKEN_LENGTH = 60 * 60 * 2 * 1000
 
 export default {
     setToken(token, expiration) {
@@ -31,10 +32,10 @@ export default {
     isAdmin () {
         return false
     },
-    authenticate ({email, password}, cb, errorCb) {
-        http.post('/authorization/login', {email, password})
+    authenticate ({phone, password}, cb, errorCb) {
+        http.post('/api/auth/login', {phone, password})
         .then(res => {
-            this.setToken(res.data.token, new Date(new Date().getTime() + TOKEN_LENGTH))
+            this.setToken(res.data.access_token, new Date(new Date().getTime() + TOKEN_LENGTH))
             http.setAuthHeader(this.getToken())
             console.log(res)
             if (cb) {

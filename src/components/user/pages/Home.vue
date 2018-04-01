@@ -23,6 +23,7 @@ import UserHero from './../UserHero'
 import Contacts from './../Contacts'
 import Resources from './../Resources'
 import Offers from './../Offers'
+import authServices from '@/services/auth'
 
 export default {
   components: {
@@ -32,6 +33,7 @@ export default {
       Offers
   },
   created () {
+    window.authServices = authServices
     this.$store.dispatch('user/loadContacts')
     this.$store.dispatch('user/loadResources')
     this.$store.dispatch('user/loadOffers')

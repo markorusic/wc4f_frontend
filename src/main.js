@@ -17,6 +17,13 @@ Vue.component('w-loader', wLoader)
 
 Vue.use(BootstrapVue)
 
+
+import authService from '@/services/auth'
+import {http} from '@/services/http'
+
+window.authService = authService
+window.http = http
+
 // register global functions
 // Vue.mixin({
 //   methods: {

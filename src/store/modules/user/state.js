@@ -1,9 +1,10 @@
 export const state = {
-    contacts: [],
-    resources: [],
-    offers: [],
-    contactsLoading: false,
-    resourcesLoading: false,
-    offersLoading: false
-  }
+  user: null,
+  contacts: [],
+  resources: [],
+  offers: [],
+  contactsLoading: false,
+  resourcesLoading: false,
+  offersLoading: false
+}
   
