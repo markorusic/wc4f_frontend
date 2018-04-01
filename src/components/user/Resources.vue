@@ -4,8 +4,21 @@
         <b-row>
             <b-col v-for="resource in resources" :key="resource.id" class="text-center">
                 <div>
-                    <h2 class="font-115">{{ resource.amount }}</h2>
-                    <span class="uc font-48">{{ resource.displayValue }}</span>
+                    <vue-circle
+                        :progress="50"
+                        :size="200"
+                        :reverse="false"
+                        line-cap="round"
+                        :fill="getFill(resource.unit)"
+                        empty-fill="rgba(0, 0, 0, .1)"
+                        :animation-start-value="0.0"
+                        :start-angle="0"
+                        insert-mode="append"
+                        :thickness="15"
+                        :show-percent="false">
+                        <p class="font-76">{{ resource.amount }}</p>
+                    </vue-circle>
+                    <p class="font-48 uc">{{ resource.displayValue }}</p>
                 </div>
             </b-col>
         </b-row>
@@ -13,7 +26,12 @@
 </template>
 
 <script>
+import VueCircle from 'vue2-circle-progress'
+
 export default {
+    components: {
+        VueCircle
+    },
   props: {
       resources: {
           type: Array,
@@ -23,6 +41,20 @@ export default {
           type: String,
           required: false,
           default: () => ''
+      }
+  },
+  methods: {
+      getFill (unit) {
+          const fill = {
+              color: 'green'
+          }
+          if (unit === 'minute') {
+              fill.color = 'red'
+          }
+          if (unit === 'sms') {
+              fill.color = 'blue'
+          }
+          return fill
       }
   }
 }
