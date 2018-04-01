@@ -14,7 +14,11 @@
                     >
                         <span class="font-20">{{ offer.name }}</span>
                         <p>{{ offer.desc }}</p>
-                        <b-button class="offer-btn uc">Kupi</b-button>
+                        <b-button class="offer-btn uc" @click="buy(offer)" 
+                            :class="{
+                                'success': offer.isBought
+                            }"
+                        >{{ buyBtnText(offer) }}</b-button>
                         <template v-if="offer.isFeatured">
                             <b-button class="preporuka-btn offer-btn uc">Preporuka</b-button>
                         </template>
@@ -47,6 +51,18 @@ export default {
       this.mutableOffers = [...this.offers]
   },
   methods: {
+      buyBtnText (offer) {
+          return offer.isBought ? 'Kupljeno' : 'Kupi'
+      },
+      buy (offerToUpdate) {
+          this.mutableOffers = this.offers
+            .map(offer => {
+                if (offer.name == offerToUpdate.name) {
+                    offer.isBought = true
+                }
+                return offer
+            })
+      },
       getStyle (index) {
           if (index === 0) {
               return {
@@ -119,6 +135,9 @@ export default {
 }
 .offer-btn:hover {
     box-shadow: 4px 4px 5px #666;
+}
+.success {
+    background-color: #1AFF85 !important;
 }
 </style>
 

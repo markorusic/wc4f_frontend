@@ -36,21 +36,24 @@ export default {
     offers: [
         {
           id: 1,
-          name: 'Ponuda 1',
-          desc: 'nesto nesto nesto',
-          isFeatured: false
+          name: '100 sms + 100mb',
+          desc: 'Jos smsa i neta za samo 199 dinara.',
+          isFeatured: false,
+          isBought: false
         },
         {
           id: 2,
-          name: 'Ponuda 2',
-          desc: 'nesto nesto nesto',
-          isFeatured: true
+          name: '50 sms besplatno',
+          desc: 'Vraćamo te na tvoju standardnu potrošnju.',
+          isFeatured: true,
+          isBought: false
         },
         {
           id: 3,
-          name: 'Ponuda 3',
-          desc: 'nesto nesto nesto',
-          isFeatured: false
+          name: '100mb',
+          desc: 'Jos neta za samo 90 dinara.',
+          isFeatured: false,
+          isBought: false
         }
     ]
 }
