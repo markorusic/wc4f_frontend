@@ -2,7 +2,10 @@ import _ from 'lodash'
 
 export const mutations = {
     setUser (state, user) {
-        state.user = user
+        state.user = {
+            ...state.user,
+            ...user
+        }
     },
     addContacts (state, contacts) {
       state.contacts = _.uniqBy([...state.contacts, ...contacts], 'id')

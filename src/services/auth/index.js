@@ -1,5 +1,5 @@
 import {http} from '@/services/http'
-// import store from '@/store'
+import store from '@/store'
 
 const AUTH_TOKEN = 'auth_token'
 const AUTH_TOKEN_EXPIRATION= 'auth_token_expiration'
@@ -15,7 +15,7 @@ export default {
         const expiration = localStorage.getItem(AUTH_TOKEN_EXPIRATION)        
         if (!token || !expiration) {
             return null
-        }        
+        }
         if (Date.now() > new Date(localStorage.getItem(AUTH_TOKEN_EXPIRATION)).getTime()) {
             this.destroyToken()
             return null
@@ -35,9 +35,12 @@ export default {
     authenticate ({phone, password}, cb, errorCb) {
         http.post('/api/auth/login', {phone, password})
         .then(res => {
-            this.setToken(res.data.access_token, new Date(new Date().getTime() + TOKEN_LENGTH))
+            this.setToken(res.data.access_token, res.data.token_expiry)
             http.setAuthHeader(this.getToken())
-            console.log(res)
+            store.commit('user/setUser', {
+                phone,
+                password
+            })
             if (cb) {
                 cb(this.getToken())
             }
