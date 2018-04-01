@@ -13,7 +13,11 @@
           <div class="after"></div>
         </fieldset>
         <fieldset class="flex-center">
-          <button @click.prevent="handleSubmit" class="btn btn-danger">Uloguj se</button>
+          <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+            <button v-show="!waitingForResponse" @click.prevent="handleSubmit" class="btn btn-danger">
+              Uloguj se
+            </button>
+          </transition>
         </fieldset>
         <b-alert :show="errMsg !== null" variant="danger">{{ errMsg }}</b-alert>
       </form>
@@ -39,7 +43,8 @@ export default {
     return {
       phone: '',
       password: '',
-      errMsg: null
+      errMsg: null,
+      waitingForResponse: false
     }
   },
   methods: {
@@ -54,6 +59,7 @@ export default {
           },3000)
         return null
       }
+      this.waitingForResponse = true
       authService.authenticate(
         {
           phone: this.phone,
@@ -70,6 +76,7 @@ export default {
             this.errMsg = null
           },3000)
           this.errMsg = 'Broj telefona ili lozinka nisu dobro uneti.'
+          this.waitingForResponse = false
         }
       )
     }
@@ -95,7 +102,9 @@ fieldset {
     border-color: white;
     margin-top: 12px;
 }
-
+button {
+  font-size: 18px;
+}
 label {
   position: absolute;  
   top: 18px;

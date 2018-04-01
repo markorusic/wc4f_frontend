@@ -6,7 +6,7 @@
 
 <style scoped>
 .main-footer {
-  height: 120px;
+  height: 70px;
   background-color:#BC3941; 
 }
 .main-footer * {

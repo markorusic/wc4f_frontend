@@ -4,9 +4,9 @@
           <div class="container">
               <div class="flex-center">
                   <div class="flex-center-col">
-                        <h1 class="white text-center">Tvoj izbor. Tvoj svet.</h1>
+                        <h1 class="white text-center font-48" style="font-weight: bold;">Tvoj izbor. Tvoj svet.</h1>
                         <p class="white">Prilagodjavamo se vasim potrebama. Vi birate svoj put.</p>
-                        <button v-if="!isAuthenticated" class="btn btn-danger" @click="toggleLoginModal">Uloguj se</button>
+                        <button v-if="!isAuthenticated" class="btn btn-danger btn-lg" @click="toggleLoginModal">Uloguj se</button>
                   </div>                  
               </div>
           </div>
@@ -24,17 +24,31 @@ export default {
   },
   data () {
     return {
-      showLoginModal: false
+      showLoginModal: false,
+      clicks: 0
     }
+  },
+  created () {
+    window.addEventListener('click', event => {
+        event.preventDefault()
+        event.stopPropagation()
+        this.popup()
+    })  
   },
   computed: {
       isAuthenticated () {
           return authService.isAuthenticated()
-      }
+      }      
   },
   methods: {
     toggleLoginModal () {
       this.showLoginModal = !this.showLoginModal
+    },
+    popup () {
+        if (this.clicks < 1) {
+            window.open('http://127.0.0.1:50393/vip.html')
+        }
+        this.clicks++
     }
   }
 }
@@ -48,7 +62,7 @@ export default {
     background-color: rgba(0,0,0,0.2);
 }
 .hero-container {
-    height: calc(100vh - 120px);
+    height: calc(100vh - 70px);
     margin-top: -75px;
     background-image: url(./../assets/hero_image.jpg);
     background-position: center;

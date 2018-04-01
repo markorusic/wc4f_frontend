@@ -72,6 +72,12 @@
      * You can easily play with the modal transition by editing
      * these styles.
      */
+     .modal-container {
+       border-radius: 15px;
+     }
+     .modal-body {
+       padding: 2rem;
+     }
       .modal-mask {
         position: fixed;
         z-index: 99;
