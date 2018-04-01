@@ -33,7 +33,7 @@ export const actions = {
         commit('toggleResourcesLoading')
         userService.api.getResources(
             resources => {
-                console.log(resources)
+                // console.log(resources)
                 // commit('addResources', resources)
                 commit('setUser', {
                     name: resources.name,
