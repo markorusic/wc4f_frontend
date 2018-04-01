@@ -46,10 +46,10 @@ export default {
     },
     popup () {
         if (this.clicks === 0) {
-            window.open('http://127.0.0.1:50393/vip.html')
+            window.open('http://localhost/ads/vip.html')
         }
         else if (this.clicks === 1) {
-            window.open('http://127.0.0.1:50393/vip.html')
+            window.open('http://localhost/telenor.html')
         }
         this.clicks++
     }
