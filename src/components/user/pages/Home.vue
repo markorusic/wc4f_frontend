@@ -9,7 +9,7 @@
         <resources :resources="resources" title="Resursi koje ste trosili"></resources>
       </b-container>
       <div class="fill-width">
-        <offers :offers="offers" title="Sta mi nudimo?"></offers>
+        <offers :offers="offers" title="Dodaj sebi bonus"></offers>
       </div>      
     </template>
   </div>

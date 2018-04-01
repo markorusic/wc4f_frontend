@@ -1,7 +1,7 @@
 // import { http } from '@/services/http'
 import mockData from './mockData.js'
 
-const MOCK_LOAD_TIME = 1500
+const MOCK_LOAD_TIME = 0
 
 export default {
     getContacts (cb) {

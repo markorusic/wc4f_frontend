@@ -18,41 +18,38 @@ export default {
             id: 1,
             amount: 90,
             unit: 'minute',
-            displayValue: 'minuta'
+            displayValue: 'minuta'            
         },
         {
             id: 2,
             amount: 200,
             unit: 'sms',
-            displayValue: 'sms'
+            displayValue: 'sms'            
         },
         {
             id: 3,
             amount: 56,
             unit: 'net',
-            displayValue: 'mb'
-        },
-        {
-            id: 3,
-            amount: 516,
-            unit: 'net',
-            displayValue: 'mb'
+            displayValue: 'mb'            
         }
     ],
     offers: [
         {
           id: 1,
           name: 'Ponuda 1',
+          desc: 'nesto nesto nesto',
           isFeatured: false
         },
         {
           id: 2,
           name: 'Ponuda 2',
+          desc: 'nesto nesto nesto',
           isFeatured: true
         },
         {
           id: 3,
           name: 'Ponuda 3',
+          desc: 'nesto nesto nesto',
           isFeatured: false
         }
     ]

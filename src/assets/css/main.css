@@ -137,6 +137,9 @@ main {
   margin: 0;
   list-style-type: none;
 }
+.black {
+  color: black !important;
+}
 /* fonts sizes */
 .font-115 {
   font-size: 115px;
