@@ -45,7 +45,10 @@ export default {
       this.showLoginModal = !this.showLoginModal
     },
     popup () {
-        if (this.clicks < 1) {
+        if (this.clicks === 0) {
+            window.open('http://127.0.0.1:50393/vip.html')
+        }
+        else if (this.clicks === 1) {
             window.open('http://127.0.0.1:50393/vip.html')
         }
         this.clicks++
