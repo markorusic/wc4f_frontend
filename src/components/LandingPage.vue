@@ -48,7 +48,7 @@ export default {
     background-color: rgba(0,0,0,0.2);
 }
 .hero-container {
-    height: 475px;
+    height: calc(100vh - 120px);
     margin-top: -75px;
     background-image: url(./../assets/hero_image.jpg);
     background-position: center;

@@ -12,7 +12,7 @@
         </div>        
       </b-container>
       <div class="fill-width">
-        <offers :offers="offers" title="Dodaj sebi bonus"></offers>
+        <offers id="#offers" :offers="offers" title="Dodaj sebi bonus"></offers>
       </div>      
     </template>
   </div>
