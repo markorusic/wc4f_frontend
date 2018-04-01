@@ -1,5 +1,5 @@
 <template>
-  <header class="main-header">
+  <header class="main-header" :style="getStyle">
       <nav>
           <span class="logo">
               <router-link :to="homeRouteObject">
@@ -44,6 +44,14 @@ export default {
             return {
                 name: 'home'
             }
+        },
+        getStyle () {
+            if (this.$route.name === 'user-profile') {
+                return {
+                    backgroundColor: 'transparent'
+                }
+            }
+            return {}
         }
     }
 }

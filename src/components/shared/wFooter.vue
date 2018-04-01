@@ -1,13 +1,13 @@
 <template>
   <footer class="main-footer flex-center">
-      <span>Footer</span>
+      <h2>Footer</h2>
   </footer>
 </template>
 
 <style scoped>
 .main-footer {
   height: 120px;
-  background-color: #333; 
+  background-color:#BC3941; 
 }
 .main-footer * {
   color: white;

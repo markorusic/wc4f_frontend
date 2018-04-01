@@ -10,6 +10,7 @@
                 >
                     <div class="flex-sp-around-col offer-item p-5"
                         :class="{'featured': offer.isFeatured}"
+                        @click.prevent="setFeatured(offer.id)"
                     >
                         <span class="font-20">{{ offer.name }}</span>
                         <p>{{ offer.desc }}</p>
@@ -37,6 +38,14 @@ export default {
         default: () => ''
     }
   },
+  data () {
+      return {
+          mutableOffers: []
+      }
+  },
+  created () {
+      this.mutableOffers = [...this.offers]
+  },
   methods: {
       getStyle (index) {
           if (index === 0) {
@@ -50,6 +59,16 @@ export default {
               }
           }
           return {}
+      },
+      setFeatured (offerID) {
+          this.mutableOffers = this.offers
+            .map(offer => {
+                offer.isFeatured = false
+                if (offer.id == offerID) {
+                    offer.isFeatured = true
+                }
+                return offer
+            })
       }
   }
 }
@@ -60,7 +79,6 @@ export default {
     background-color: #E6E6E6;
     width: 100%;
     color: white;
-    /* background: url('./../../assets/mts_circles.png') no-repeat center center;  */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -73,11 +91,16 @@ export default {
     height: 430px;
     border-radius: 20px;
 }
+.offer-item:hover {
+    box-shadow: 4px 4px 5px #666;
+    cursor: pointer;
+}
 .offer-item.featured {
     background: url('./../../assets/offer_card.png') no-repeat center center; 
     height: 458px;
     z-index: 9;
     position: relative;
+    box-shadow: 4px 4px 5px #888888;
 }
 .preporuka-btn {
     position: absolute;
@@ -93,6 +116,9 @@ export default {
     border: none;
     padding: 10px 45px;
     border-radius: 10px;
+}
+.offer-btn:hover {
+    box-shadow: 4px 4px 5px #666;
 }
 </style>
 

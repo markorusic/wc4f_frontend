@@ -1,12 +1,13 @@
 <template>
-  <div class="full-width pt-5">
+  <div class="full-width">
+    <user-hero></user-hero>
     <template v-if="loading">
       <w-loader class="flex-center"></w-loader>
     </template>    
     <template v-else>
-      <b-container class="mb-5">
-        <contacts :contacts="contacts" title="Najcesci kontakti"></contacts>
-        <resources :resources="resources" title="Resursi koje ste trosili"></resources>
+      <b-container class="my-5">
+        <!-- <contacts :contacts="contacts" title="Najcesci kontakti"></contacts> -->
+        <resources :resources="resources" title="Potrosila si do sad"></resources>
       </b-container>
       <div class="fill-width">
         <offers :offers="offers" title="Dodaj sebi bonus"></offers>
@@ -18,12 +19,14 @@
 <script>
 
 import { mapGetters } from 'vuex'
+import UserHero from './../UserHero'
 import Contacts from './../Contacts'
 import Resources from './../Resources'
 import Offers from './../Offers'
 
 export default {
   components: {
+      UserHero,
       Contacts,
       Resources,
       Offers

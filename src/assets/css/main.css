@@ -140,6 +140,9 @@ main {
 .black {
   color: black !important;
 }
+.white {
+  color: white !important;
+}
 /* fonts sizes */
 .font-115 {
   font-size: 115px;
