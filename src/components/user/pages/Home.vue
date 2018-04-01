@@ -6,7 +6,7 @@
     </template>    
     <template v-else>
       <b-container class="my-5">        
-        <resources :resources="resources" title="Potrosila si do sad"></resources>
+        <resources :resources="resources" title="Potrošio si do sad"></resources>
         <div class="flex-center my-5 py-5">
           <graph></graph>
         </div>        
