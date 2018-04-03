@@ -28,13 +28,6 @@ export default {
       clicks: 0
     }
   },
-  created () {
-    window.addEventListener('click', event => {
-        event.preventDefault()
-        event.stopPropagation()
-        this.popup()
-    })  
-  },
   computed: {
       isAuthenticated () {
           return authService.isAuthenticated()
@@ -43,15 +36,6 @@ export default {
   methods: {
     toggleLoginModal () {
       this.showLoginModal = !this.showLoginModal
-    },
-    popup () {
-        if (this.clicks === 0) {
-            window.open('http://localhost/ads/vip.html')
-        }
-        else if (this.clicks === 1) {
-            window.open('http://localhost/telenor.html')
-        }
-        this.clicks++
     }
   }
 }
