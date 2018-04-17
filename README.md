@@ -1,4 +1,4 @@
-# vtv-2.0-frontend
+# wc4f_frontend
 
 > A Vue.js project
 
